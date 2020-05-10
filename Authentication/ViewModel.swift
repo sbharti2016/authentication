@@ -37,7 +37,7 @@ class ViewModel {
         return Publishers.CombineLatest($password, $confirmPassword)
             .map { pass, confirmPass in
                 if pass == confirmPass, (pass?.count ?? 0) > 0 {
-                    self.passwordValidationPublisher.send("password Matched")
+                    self.passwordValidationPublisher.send("password matched")
                     return pass
                 }
                 self.passwordValidationPublisher.send(nil)
